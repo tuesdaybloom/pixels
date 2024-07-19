@@ -6,14 +6,14 @@
     <title>Pixels</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="text-xl md:text-2xl xl:text-3xl">
-    <nav class="bg-gray-800 p-4 ">
+<body >
+    <nav class="bg-gray-800 p-4 text-xl md:text-2xl xl:text-3xl">
         <div class="container mx-auto flex justify-between items-center">
             <p class="text-white font-semibold">Pixels</p>  
         </div>
     </nav>
-    <div class="container p-4 px-9 ">
-        <h1 class=" font-bold mt-6 text-center">
+    <div class="container p-8 md:p-6 ">
+        <h1 class=" font-bold mt-6 text-center text-xl md:text-2xl xl:text-3xl">
             Resize your Image As Per Your Need
         </h1>
         <div id="img-container" class="my-6 border-gray-800 border p-2 flex justify-center items-center" style="height:40vh;">
@@ -24,11 +24,11 @@
         </div>
         <div class="my-4 flex items-center space-x-2">
             <label for="width" class="text-gray-800">Width:</label>
-            <input id="width" type="number" class="border border-gray-400 p-1 focus:outline-none focus:ring-2 focus:ring-gray-800" placeholder="Width">
+            <input id="width" type="number" class="border border-gray-400 p-1 focus:outline-none focus:ring-2 focus:ring-gray-800 rounded" placeholder="Width">
         </div>
         <div class="my-4 flex items-center space-x-2">
             <label for="height" class="text-gray-800">Height:</label>
-            <input id="height" type="number" class="border border-gray-400 p-1 focus:outline-none focus:ring-2 focus:ring-gray-800" placeholder="Height px">
+            <input id="height" type="number" class="border border-gray-400 p-1 focus:outline-none focus:ring-2 focus:ring-gray-800 rounded" placeholder="Height px">
         </div>
         <div class="my-4">
             <button id="resize" type="button" class="bg-gray-800 text-white py-1 px-2.5 hover:bg-gray-400 rounded shadow-md">Resize</button>

@@ -1,63 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixels</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body>
-    <nav class="bg-gray-800 p-4">
+    <nav class="bg-gray-800 p-4 text-xl md:text-2xl xl:text-3xl">
         <div class="container mx-auto flex justify-between items-center">
-            <p class="text-white text-xl font-bold">Pixels</p>
+            <p class="text-white font-semibold">Pixels</p>  
         </div>
     </nav>
-    <div class="container p-4 px-9">
+    <div class="container p-4 px-9 ">
         <h1 class="text-xl font-bold mt-6 text-center">
             Resize your Image As Per Your Need
         </h1>
-        <div class="flex justify-center items-center flex-col">
-            <div id="img-container" class="my-6 border-gray-800 border p-2 flex justify-center items-center h-max w-4/5">
-                <img id="uploaded-image" src="#" alt="Upload Img"
-                    style="display: none; max-width: 100%; max-height: 100%;">
-            </div>
-        
-            <div class="my-4 ">
-                <input id="img" type="file" name="image" accept="image/*"
-                    class="focus:outline-none focus:ring-2 focus:ring-gray-800">
-            </div>
-            <div class="my-4 flex items-center space-x-2">
-                <label for="width" class="text-gray-800">Width:</label>
-                <input id="width" type="number"
-                    class="border border-gray-400 p-1 focus:outline-none focus:ring-2 focus:ring-gray-800 rounded"
-                    placeholder="Width px">
-            </div>
-            <div class="my-4 flex items-center space-x-2">
-                <label for="height" class="text-gray-800">Height:</label>
-                <input id="height" type="number"
-                    class="border border-gray-400 p-1 focus:outline-none focus:ring-2 focus:ring-gray-800 rounded"
-                    placeholder="Height px">
-            </div>
-            <div class="my-4">
-                <button id="resize" type="button"
-                    class="bg-gray-800 text-white py-1 px-2.5 hover:bg-gray-400 rounded shadow-md">Resize</button>
-                <button id="download" type="button"
-                    class="bg-gray-800 text-white py-1 px-2.5 hover:bg-gray-400 rounded shadow-md">Download</button>
-            </div>
+        <div id="img-container" class="my-6 border-gray-800 border p-2 flex justify-center items-center" style="height:40vh;">
+            <img id="uploaded-image" src="#" alt="Upload Img"  style="display: none; max-width: 100%; max-height: 100%;">
+        </div>
+        <div class="my-4">
+            <input id="img" type="file" name="image" accept="image/*" class="focus:outline-none focus:ring-2 focus:ring-gray-800">
+        </div>
+        <div class="my-4 flex items-center space-x-2">
+            <label for="width" class="text-gray-800">Width:</label>
+            <input id="width" type="number" class="border border-gray-400 p-1 focus:outline-none focus:ring-2 focus:ring-gray-800" placeholder="Width">
+        </div>
+        <div class="my-4 flex items-center space-x-2">
+            <label for="height" class="text-gray-800">Height:</label>
+            <input id="height" type="number" class="border border-gray-400 p-1 focus:outline-none focus:ring-2 focus:ring-gray-800" placeholder="Height px">
+        </div>
+        <div class="my-4">
+            <button id="resize" type="button" class="bg-gray-800 text-white py-1 px-2.5 hover:bg-gray-400 rounded shadow-md">Resize</button>
+            <button id="download" type="button" class="bg-gray-800 text-white py-1 px-2.5 hover:bg-gray-400 rounded shadow-md">Download</button>
         </div>
     </div>
 </body>
 <script>
-    document.getElementById('img').addEventListener('change', function () {
+    document.getElementById('img').addEventListener('change', function() {
         const uploadedImg = document.getElementById('uploaded-image');
         const file = this.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = (e) => {
                 uploadedImg.src = e.target.result;
-                uploadedImg.style.display = 'flex';
+                uploadedImg.style.display = 'block';
             }
             reader.readAsDataURL(file);
         } else {
@@ -85,7 +72,7 @@
         const uploadedImg = document.getElementById('uploaded-image');
         const canvas = document.createElement('canvas');
         const context = canvas.getContext('2d');
-
+        
         canvas.width = uploadedImg.width;
         canvas.height = uploadedImg.height;
 
@@ -97,5 +84,4 @@
         link.click();
     }
 </script>
-
 </html>
